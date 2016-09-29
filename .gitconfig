@@ -9,5 +9,7 @@
 	helper = cache --timeout=3600
 [core]
 	editor = vim
+[color]
+    ui = true
 [alias]
     hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
