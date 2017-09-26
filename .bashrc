@@ -66,9 +66,13 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1="\n[\[\033[32m\]\w]\[\033[0m\]\n\[\033[1;34m\]\u\[\033[1;30m\]$ \[\033[0m\]"
+
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    #PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1="\n[\[\033[32m\]\w]\[\033[0m\]\n\[\033[1;30m\]\u\[\033[1;30m\]$ \[\033[0m\]"
+
 fi
 unset color_prompt force_color_prompt
 
@@ -84,22 +88,19 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    #alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
 fi
 
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+# some more ls aliases (see bash_aliases!)
+#alias ll='ls -alF'
+#alias la='ls -A'
+#alias l='ls -CF'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -125,5 +126,23 @@ if ! shopt -oq posix; then
   fi
 fi
 
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
 # added by Anaconda2 4.1.1 installer
 export PATH="/home/clare/anaconda2/bin:$PATH"
+
+# ncl libraries
+export NCARG_ROOT="/usr/"
+#export PATH="/home/clare/Build_WRF/LIBRARIES/netcdf/bin:$PATH"
+export LD_LIBRARY_PATH="/home/clare/Build_WRF/LIBRARIES/netcdf/lib:$LD_LIBRARY_PATH"
+export NETCDF="/home/clare/Build_WRF/LIBRARIES/netcdf"
+export NETCDF_INCDIR="/home/clare/Build_WRF/LIBRARIES/netcdf/include"
+export NETCDF_LIBDIR="/home/clare/Build_WRF/LIBRARIES/netcdf/lib"
+
+export ESMF_DIR="/home/clare/esmf"
+
+export matlabroot="/home/clare/MATLAB/R2017a/bin/matlab"
+export PATH="/home/clare/MATLAB/R2017a/bin/:$PATH"
+
+source /usr/local/ferret/ferret_paths

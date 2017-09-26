@@ -8,7 +8,7 @@ alias du='du -kh --max-depth=1'
 # Misc :)
 # alias less='less -r'                          # raw control characters
 # alias whence='type -a'                        # where, of a sort
-alias grep='grep --color'                     # show differences in colour
+alias grep='grep --color=auto'                     # show differences in colour
 alias egrep='egrep --color=auto'              # show differences in colour
 alias fgrep='fgrep --color=auto'              # show differences in colour
 
@@ -22,6 +22,7 @@ alias ll='ls -lhvA --group-directories-first'   # long list
 alias la='ls -A'                              # all but . and ..
 alias lrt='ls -Alrt'
 alias l='ls -CF'                              #
+alias lcol='ls | pr -T9 -W$COLUMNS'           # print ls in 9 columns to width of terminal
 
 
 alias psg='ps aux | grep -v grep | grep -i -e VSZ -e'
@@ -33,3 +34,4 @@ alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 
 #alias dalmalogin=`ssh ce38@dalma.abudhabi.nyu.edu`
 
+alias mc='. /usr/share/mc/bin/mc-wrapper.sh'
