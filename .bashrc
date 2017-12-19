@@ -140,9 +140,32 @@ export NETCDF="/home/clare/Build_WRF/LIBRARIES/netcdf"
 export NETCDF_INCDIR="/home/clare/Build_WRF/LIBRARIES/netcdf/include"
 export NETCDF_LIBDIR="/home/clare/Build_WRF/LIBRARIES/netcdf/lib"
 
-export ESMF_DIR="/home/clare/esmf"
+export ESMF_DIR=/home/clare/esmf
+export ESMF_INSTALL_PREFIX=/usr/local/esmf
+export ESMF_OS=Linux
+export ESMF_NETCDF=/home/clare/Build_WRF/LIBRARIES/netcdf
+#"local"
+export ESMF_COMM=mpiuni
+export ESMF_F90COMPILER=gfortran
+export ESMF_CXXCOMPILER=g++
+export ESMF_TESTEXHAUSTIVE=on
+export ESMF_TESTSHAREDOBJ=on
+export ESMF_NETCDF_INCLUDE=/home/clare/Build_WRF/LIBRARIES/netcdf/include
+#/usr/local/netcdf4/include
+export ESMF_NETCDF_LIBS="-lnetcdf -lnetcdff"
+export ESMF_NETCDF_LIBPATH=/home/clare/Build_WRF/LIBRARIES/netcdf/lib
+#/usr/local/netcdf4/lib
+export ESMF_BOPT=O3
 
 export matlabroot="/home/clare/MATLAB/R2017a/bin/matlab"
 export PATH="/home/clare/MATLAB/R2017a/bin/:$PATH"
 
 source /usr/local/ferret/ferret_paths
+
+# to fix issue with matplotlib error msg:
+export GIO_EXTRA_MODULES=/usr/lib/x86_64-linux-gnu/gio/modules/
+
+# this fixes the problem of synaptic not opening:
+if ! xhost |grep -q SI:localuser:root;then  
+      xhost si:localuser:root >/dev/null
+fi
