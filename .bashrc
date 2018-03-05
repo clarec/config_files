@@ -128,34 +128,39 @@ fi
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
+# force less to allow control sequences that change the color of output
+export LESS=-R
 
 # added by Anaconda2 4.1.1 installer
 export PATH="/home/clare/anaconda2/bin:$PATH"
+export PATH=/usr/local/bin:$PATH
+export LD_LIBRARY_PATH="/usr/local/lib:/usr/local/netcdf432/lib:$LD_LIBRARY_PATH"
+# alias anacondainit='export PATH="/home/clare/anaconda2/bin:$PATH"'
 
 # ncl libraries
 export NCARG_ROOT="/usr/"
 #export PATH="/home/clare/Build_WRF/LIBRARIES/netcdf/bin:$PATH"
-export LD_LIBRARY_PATH="/home/clare/Build_WRF/LIBRARIES/netcdf/lib:$LD_LIBRARY_PATH"
-export NETCDF="/home/clare/Build_WRF/LIBRARIES/netcdf"
-export NETCDF_INCDIR="/home/clare/Build_WRF/LIBRARIES/netcdf/include"
-export NETCDF_LIBDIR="/home/clare/Build_WRF/LIBRARIES/netcdf/lib"
+#export LD_LIBRARY_PATH="/home/clare/Build_WRF/LIBRARIES/netcdf/lib:$LD_LIBRARY_PATH"
+#export NETCDF="/home/clare/Build_WRF/LIBRARIES/netcdf"
+#export NETCDF_INCDIR="/home/clare/Build_WRF/LIBRARIES/netcdf/include"
+#export NETCDF_LIBDIR="/home/clare/Build_WRF/LIBRARIES/netcdf/lib"
 
-export ESMF_DIR=/home/clare/esmf
-export ESMF_INSTALL_PREFIX=/usr/local/esmf
-export ESMF_OS=Linux
-export ESMF_NETCDF=/home/clare/Build_WRF/LIBRARIES/netcdf
+#export ESMF_DIR=/home/clare/esmf
+#export ESMF_INSTALL_PREFIX=/usr/local/esmf
+#export ESMF_OS=Linux
+#export ESMF_NETCDF=/home/clare/Build_WRF/LIBRARIES/netcdf
 #"local"
-export ESMF_COMM=mpiuni
-export ESMF_F90COMPILER=gfortran
-export ESMF_CXXCOMPILER=g++
-export ESMF_TESTEXHAUSTIVE=on
-export ESMF_TESTSHAREDOBJ=on
-export ESMF_NETCDF_INCLUDE=/home/clare/Build_WRF/LIBRARIES/netcdf/include
+#export ESMF_COMM=mpiuni
+#export ESMF_F90COMPILER=gfortran
+#export ESMF_CXXCOMPILER=g++
+#export ESMF_TESTEXHAUSTIVE=on
+#export ESMF_TESTSHAREDOBJ=on
+#export ESMF_NETCDF_INCLUDE=/home/clare/Build_WRF/LIBRARIES/netcdf/include
 #/usr/local/netcdf4/include
-export ESMF_NETCDF_LIBS="-lnetcdf -lnetcdff"
-export ESMF_NETCDF_LIBPATH=/home/clare/Build_WRF/LIBRARIES/netcdf/lib
+#export ESMF_NETCDF_LIBS="-lnetcdf -lnetcdff"
+#export ESMF_NETCDF_LIBPATH=/home/clare/Build_WRF/LIBRARIES/netcdf/lib
 #/usr/local/netcdf4/lib
-export ESMF_BOPT=O3
+#export ESMF_BOPT=O3
 
 export matlabroot="/home/clare/MATLAB/R2017a/bin/matlab"
 export PATH="/home/clare/MATLAB/R2017a/bin/:$PATH"
@@ -169,3 +174,6 @@ export GIO_EXTRA_MODULES=/usr/lib/x86_64-linux-gnu/gio/modules/
 if ! xhost |grep -q SI:localuser:root;then  
       xhost si:localuser:root >/dev/null
 fi
+
+#export ssh_dal='ssh -X ce38@dalma.abudhabi.nyu.edu'
+export GOTMDIR=/home/clare/local/gotm/bin/

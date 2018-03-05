@@ -35,3 +35,6 @@ alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 #alias dalmalogin=`ssh ce38@dalma.abudhabi.nyu.edu`
 
 alias mc='. /usr/share/mc/bin/mc-wrapper.sh'
+
+alias ssh_dal='ssh -X ce38@dalma.abudhabi.nyu.edu'
+# alias rungotm='./home/clare/local/gotm/bin/gotm'

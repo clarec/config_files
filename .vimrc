@@ -60,11 +60,11 @@ set scrolloff=5         " 5 screen lines above and below cursor
 
 " When opening a new line and no filetype-specific indenting is enabled, keep
 " the same indent as the line you're currently on. Useful for READMEs, etc.
-"set autoindent          " turn on automatic indentation
+set autoindent          " turn on automatic indentation
 
 set backspace=indent,eol,start
 
-set number             " turn line numbering on
+" set number             " turn line numbering on
 set showcmd            " show command in bottom bar
 set showmode           " shows which mode you are in
 set cursorline         " highlight current line
@@ -73,7 +73,7 @@ set ruler              " display cursor position
 set cmdheight=2        " height of the command bar
 
 " format the status line
-"set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %1
+"" set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %1
 
 " -------------
 " Searching
